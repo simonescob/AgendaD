@@ -1,0 +1,35 @@
+{% extends "Base.html" %}
+
+{% block css %}{% endblock %}
+
+{% block Content %}
+
+	<div class="Auth">
+
+		<a href="{% url 'Home' %}">Volver</a>
+		<br>
+		
+		<form action="" method="post">
+			<h2>Acceder a <br> VCallCenter</h2>
+			<br>
+			
+			{% if messages %}
+			{% for message in messages %}
+			<p class="error">{{message}}</p>
+			<br>
+			{% endfor %}
+			{% endif %}
+
+			{% csrf_token %}
+			{{ form }}
+			
+			
+			<button type="submit">acceder</button>
+		</form>
+		<a href="{% url 'Register' %}">Registrate aquí</a>
+
+	</div>
+
+{% endblock %}
+
+

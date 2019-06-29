@@ -1,0 +1,26 @@
+<form action="{% url 'contact:create' %}" method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+	
+	{% comment %}
+	{% endcomment %}
+	<input type="hidden" name="user" value="{{ user.pk }}">
+	
+	<label for="first_name">Nombre</label>
+	<input type="text" name="first_name" id="first_name">
+	
+	<label for="last_name">Apellido</label>
+	<input type="text" name="last_name" id="last_name">
+	
+	<label for="number">Numero</label>
+	<input type="number" name="number" id="number">
+	
+	<label for="email">Correo</label>
+	<input type="email" name="email" id="email">
+	
+	<label for="image">Imagen</label>
+	<input type="file" name="image" id="image">
+
+	<button type="submit">Guardar</button>
+	
+</form>

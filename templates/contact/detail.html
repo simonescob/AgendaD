@@ -1,0 +1,12 @@
+<h2>{{ object.first_name }} {{ object.last_name }}</h2>
+<h3>Número: {{ object.number }}</h3>
+
+{% if object.email %}
+  <h3>Correo: {{ object.email }}</h3>
+{% endif %}
+
+{% if object.image %}
+  <img style="width: 300px" src="{{ MEDIA_URL }}{{ object.image }}" alt="image">
+{% endif %}
+
+<h3><a href="{% url 'contact:delete' object.id %}">Borrar</a></h3>

@@ -1,0 +1,21 @@
+{% for contact in contacts %}
+	
+<h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
+<h3>Número: {{ contact.number }}</h3>
+
+{% if contact.email %}
+  <h3>Correo: {{ contact.email }}</h3>
+{% endif %}
+
+{% if contact.image %}
+  <img style="width: 300px" src="{{ MEDIA_URL }}{{ contact.image }}" alt="image">
+{% endif %}
+
+<h3>
+  <a href="{% url 'contact:update' contact.id %}">Editar</a> 
+  <a href="{% url 'contact:delete' contact.id %}">Borrar</a>
+</h3>
+
+<br>
+
+{% endfor %}

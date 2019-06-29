@@ -1,0 +1,25 @@
+{% extends "Base.html" %}
+
+{% block Content %}
+
+	<div class="Auth">
+		<a href="{% url 'Home' %}">Volver</a>
+		
+		<form action="" method="post">
+			
+			{% csrf_token %}
+			{{ form.errors }}
+			{{ form.as_p }}
+			<p>
+				<label for="id_password2">Confirmar Contraseña</label>
+				<input type="password" name="password2" id="id_password2" maxlength="128">
+			</p>
+			
+			<button type="submit">registrar</button>
+			
+		</form>
+		<a href="{% url 'Register' %}">Accede aquí</a>
+		
+	</div>
+
+{% endblock Content %}

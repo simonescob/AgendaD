@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h1>Hola {{ user }}</h1>
+
+	{% include 'contact/create.html' %}
+	
+	<h2>Mis contactos:</h2>
+	
+	{% include 'contact/contacts.html' %}
+	
+{% endblock  %}
