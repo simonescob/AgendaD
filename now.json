@@ -3,7 +3,7 @@
 	"name": "AgendaD",
 	"builds": [{
 			"src": "AgendaD/wsgi.py",
-			"use": "@ardnt/now-python-wsgi",
+			"use": "@now/python",
 			"config": { "maxLambdaSize": "15mb" }
 	}],
 	"routes": [{
